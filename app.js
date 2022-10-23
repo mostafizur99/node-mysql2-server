@@ -1,9 +1,11 @@
 require('dotenv').config()
-const db = require('./dbConnect')
+const sqlQueries = require('./sqlQuery')
 
-db.execute('SELECT * FROM employee_data')
-    .then(result => {
-        console.log(result[0]);
+// fetch all data 
+sqlQueries.fetchAll()
+    .then(([allData, fieldData]) => {
+        console.log(allData);
+        console.log(fieldData);
     })
     .catch(err => {
         console.log(err);
