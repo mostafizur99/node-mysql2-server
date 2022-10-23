@@ -13,17 +13,28 @@ const sqlQueries = require('./sqlQuery')
 
 
 // =======insert data==========
-const insertData = {
-    name: 'John Young',
-    age: '28',
-    gender: 'Male',
-    salary: '3000'
-}
-sqlQueries.insert(insertData)
-    .then(() => {
-        console.log('Data Inserted Successfully');
+// const insertData = {
+//     name: 'John Young',
+//     age: '28',
+//     gender: 'Male',
+//     salary: '3000'
+// }
+// sqlQueries.insert(insertData)
+//     .then(() => {
+//         console.log('Data Inserted Successfully');
+//     })
+//     .catch(err => {
+//         console.error('Data Insertion Failed', err);
+//     });
+
+
+// =======get single data by id==========
+const itemId = 3
+sqlQueries.findById(itemId)
+    .then(([singleItem]) => {
+        console.log('Data Fetched Successfully', singleItem[0]);
     })
     .catch(err => {
-        console.error('Data Insertion Failed', err);
+        console.error('Failed to Fetch Data', err);
     });
 
