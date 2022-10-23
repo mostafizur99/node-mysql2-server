@@ -1,0 +1,12 @@
+{
+  "name": "node-mysql2-server",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "mysql2": "^2.3.3"
+  }
+}
